@@ -1,0 +1,417 @@
+/* Import Global Theme */
+@import "./styles/themes.css";
+
+/* Import PrimeReact Theme */
+@import "primereact/resources/themes/lara-light-indigo/theme.css";
+@import "primereact/resources/primereact.min.css";
+@import "primeicons/primeicons.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations for the beautiful login page */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 1s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animation delays */
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-3000 {
+  animation-delay: 3s;
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+
+  /* EMR Medical Theme Colors */
+  --medical-primary: hsl(217, 91%, 60%);
+  --medical-success: hsl(142, 76%, 36%);
+  --medical-warning: hsl(32, 95%, 44%);
+  --medical-error: hsl(0, 84%, 60%);
+  --medical-neutral: hsl(215, 16%, 47%);
+
+  /* Status Colors */
+  --status-critical: hsl(0, 84%, 60%);
+  --status-warning: hsl(32, 95%, 44%);
+  --status-stable: hsl(142, 76%, 36%);
+  --status-monitoring: hsl(217, 91%, 60%);
+  --status-discharged: hsl(215, 16%, 47%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+
+  /* EMR Medical Theme Colors - Dark Mode */
+  --medical-primary: hsl(217, 91%, 60%);
+  --medical-success: hsl(142, 76%, 36%);
+  --medical-warning: hsl(32, 95%, 44%);
+  --medical-error: hsl(0, 84%, 60%);
+  --medical-neutral: hsl(215, 16%, 47%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  /* Medical specific styles */
+  .medical-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+      0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  }
+
+  .medical-shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08),
+      0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  }
+
+  /* Status indicator styles */
+  .status-critical {
+    @apply text-red-600 bg-red-50 border-red-200;
+  }
+
+  .status-warning {
+    @apply text-orange-600 bg-orange-50 border-orange-200;
+  }
+
+  .status-stable {
+    @apply text-green-600 bg-green-50 border-green-200;
+  }
+
+  .status-monitoring {
+    @apply text-blue-600 bg-blue-50 border-blue-200;
+  }
+
+  .status-discharged {
+    @apply text-gray-600 bg-gray-50 border-gray-200;
+  }
+
+  /* EMR specific typography */
+  .medical-heading {
+    @apply text-2xl font-bold text-foreground leading-tight;
+  }
+
+  .medical-subheading {
+    @apply text-lg font-semibold text-muted-foreground;
+  }
+
+  .medical-caption {
+    @apply text-sm text-muted-foreground;
+  }
+
+  /* Form styles for medical inputs */
+  .medical-input {
+    @apply w-full px-4 py-3 border border-input rounded-lg 
+           focus:ring-2 focus:ring-primary focus:border-primary 
+           transition-all duration-200 text-foreground placeholder-muted-foreground
+           bg-background;
+  }
+
+  .medical-button-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg 
+           font-medium hover:bg-primary/90 focus:ring-2 focus:ring-primary 
+           focus:ring-offset-2 transition-all duration-200 
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Animation utilities */
+  .fade-in {
+    animation: fadeIn 200ms ease-in-out;
+  }
+
+  .slide-up {
+    animation: slideUp 200ms ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive design helpers */
+  .container-medical {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Custom scrollbar for medical applications */
+  .medical-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--muted));
+  }
+
+  .medical-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .medical-scroll::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .medical-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 3px;
+  }
+
+  .medical-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.8);
+  }
+}
+
+@layer components {
+  /* Medical card component */
+  .medical-card {
+    @apply bg-card text-card-foreground rounded-lg border medical-shadow p-6;
+  }
+
+  .medical-card-header {
+    @apply flex items-center justify-between mb-4 pb-2 border-b border-border;
+  }
+
+  /* Medical form components */
+  .medical-form-group {
+    @apply space-y-2 mb-4;
+  }
+
+  .medical-form-label {
+    @apply block text-sm font-medium text-foreground mb-2;
+  }
+
+  /* Medical table styles */
+  .medical-table {
+    @apply w-full border-collapse border border-border rounded-lg overflow-hidden;
+  }
+<<<<<<< HEAD
+
+=======
+  
+  /* Select component fixes for better visibility */
+  [data-radix-select-trigger] {
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  [data-radix-select-value] {
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  [data-radix-select-item] {
+    color: hsl(var(--popover-foreground)) !important;
+  }
+  
+  [data-radix-select-item][data-highlighted] {
+    color: hsl(var(--accent-foreground)) !important;
+  }
+  
+  /* Ensure placeholder text is visible */
+  [data-radix-select-value][data-placeholder] {
+    color: hsl(var(--muted-foreground)) !important;
+  }
+  
+  /* Additional specificity for selected values */
+  .text-foreground[data-radix-select-value] {
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  /* Force display of selected values */
+  [data-radix-select-value]:not([data-placeholder]) {
+    color: hsl(var(--foreground)) !important;
+    opacity: 1 !important;
+  }
+  
+  /* Ensure the select trigger shows the value properly */
+  [data-radix-select-trigger] span {
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  /* Additional fixes for select value display */
+  [data-radix-select-value] {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  /* Ensure placeholder is properly styled when no value is selected */
+  [data-radix-select-value][data-placeholder] {
+    color: hsl(var(--muted-foreground)) !important;
+  }
+  
+  /* Override any potential hiding of select values */
+  .text-foreground[data-radix-select-value]:not([data-placeholder]) {
+    color: hsl(var(--foreground)) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+>>>>>>> ba7e0fb182525e9cd46a3f5d213c946ae3182753
+  .medical-table th {
+    @apply bg-muted text-muted-foreground px-4 py-3 text-left text-sm font-medium border-b border-border;
+  }
+
+  .medical-table td {
+    @apply px-4 py-3 text-sm text-foreground border-b border-border;
+  }
+
+  .medical-table tr:hover {
+    @apply bg-muted/50;
+  }
+}
+
+.tiptap {
+  min-height: 120px;
+  outline: none;
+}

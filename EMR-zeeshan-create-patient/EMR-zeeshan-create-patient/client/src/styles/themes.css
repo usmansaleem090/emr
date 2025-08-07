@@ -1,0 +1,224 @@
+/* Global Theme Configuration */
+:root {
+  /* Font family for everything */
+  --font-family-main: 'Roboto' , "Libertinus Sans" , Georgia ,"Playfair Display", 'Roboto', 'Segoe UI', Arial, sans-serif;
+
+  /* Font sizes (smaller than before) */
+  --font-size-xs: 0.7rem;
+  --font-size-sm: 0.8rem;
+  --font-size-base: 0.95rem;
+  --font-size-lg: 1.05rem;
+  --font-size-xl: 1.15rem;
+  --font-size-2xl: 1.3rem;
+  --font-size-3xl: 1.5rem;
+  --font-size-4xl: 1.8rem;
+  --font-size-5xl: 2.2rem;
+
+  /* Light Theme Colors */
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-200: #bfdbfe;
+  --primary-300: #93c5fd;
+  --primary-400: #60a5fa;
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+  --primary-700: #1d4ed8;
+  --primary-800: #1e40af;
+  --primary-900: #1e3a8a;
+  --primary-950: #172554;
+
+  --secondary-50: #f8fafc;
+  --secondary-100: #f1f5f9;
+  --secondary-200: #e2e8f0;
+  --secondary-300: #cbd5e1;
+  --secondary-400: #94a3b8;
+  --secondary-500: #64748b;
+  --secondary-600: #475569;
+  --secondary-700: #334155;
+  --secondary-800: #1e293b;
+  --secondary-900: #0f172a;
+  --secondary-950: #020617;
+
+  --accent-50: #fef7ee;
+  --accent-100: #fdedd4;
+  --accent-200: #fbd7a8;
+  --accent-300: #f8bb71;
+  --accent-400: #f59e0b;
+  --accent-500: #f59e0b;
+  --accent-600: #d97706;
+  --accent-700: #b45309;
+  --accent-800: #92400e;
+  --accent-900: #78350f;
+  --accent-950: #451a03;
+
+  --success-50: #f0fdf4;
+  --success-100: #dcfce7;
+  --success-200: #bbf7d0;
+  --success-300: #86efac;
+  --success-400: #4ade80;
+  --success-500: #22c55e;
+  --success-600: #16a34a;
+  --success-700: #15803d;
+  --success-800: #166534;
+  --success-900: #14532d;
+  --success-950: #052e16;
+
+  --warning-50: #fffbeb;
+  --warning-100: #fef3c7;
+  --warning-200: #fde68a;
+  --warning-300: #fcd34d;
+  --warning-400: #fbbf24;
+  --warning-500: #f59e0b;
+  --warning-600: #d97706;
+  --warning-700: #b45309;
+  --warning-800: #92400e;
+  --warning-900: #78350f;
+  --warning-950: #451a03;
+
+  --error-50: #fef2f2;
+  --error-100: #fee2e2;
+  --error-200: #fecaca;
+  --error-300: #fca5a5;
+  --error-400: #f87171;
+  --error-500: #ef4444;
+  --error-600: #dc2626;
+  --error-700: #b91c1c;
+  --error-800: #991b1b;
+  --error-900: #7f1d1d;
+  --error-950: #450a0a;
+
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --gray-950: #030712;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Apply font family and sizes globally */
+body {
+  font-family: var(--font-family-main) !important;
+  font-size: var(--font-size-base) !important;
+}
+
+/* Headings - all use the same font family, smaller sizes */
+h1, .heading-1 { 
+  font-size: var(--font-size-3xl) !important; 
+  font-family: var(--font-family-main) !important; 
+}
+
+h2, .heading-2 { 
+  font-size: var(--font-size-2xl) !important; 
+  font-family: var(--font-family-main) !important; 
+}
+
+h3, .heading-3 { 
+  font-size: var(--font-size-xl) !important; 
+  font-family: var(--font-family-main) !important; 
+}
+
+h4, .heading-4 { 
+  font-size: var(--font-size-lg) !important; 
+  font-family: var(--font-family-main) !important; 
+}
+
+h5, .heading-5 { 
+  font-size: var(--font-size-base) !important; 
+  font-family: var(--font-family-main) !important; 
+}
+
+h6, .heading-6 { 
+  font-size: var(--font-size-sm) !important; 
+  font-family: var(--font-family-main) !important; 
+}
+
+/* Override any existing font styles */
+* {
+  font-family: var(--font-family-main) !important;
+}
+
+.dark {
+  /* Dark Theme Colors - Same primary/secondary structure */
+  --primary-50: #1e3a8a;
+  --primary-100: #1e40af;
+  --primary-200: #1d4ed8;
+  --primary-300: #2563eb;
+  --primary-400: #3b82f6;
+  --primary-500: #60a5fa;
+  --primary-600: #93c5fd;
+  --primary-700: #bfdbfe;
+  --primary-800: #dbeafe;
+  --primary-900: #eff6ff;
+  
+  /* Dark Theme Background & Text */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  
+  /* Dark Borders */
+  --border-primary: #334155;
+  --border-secondary: #475569;
+  
+  /* Dark Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.25);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.25), 0 2px 4px -2px rgb(0 0 0 / 0.25);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.25), 0 4px 6px -4px rgb(0 0 0 / 0.25);
+}
+
+/* Global Utility Classes */
+.theme-transition {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* PrimeReact Theme Override */
+.p-component {
+  font-family: inherit;
+}
+
+.p-button {
+  transition: all 0.2s ease;
+}
+
+.p-button.p-button-primary {
+  background-color: var(--primary-600);
+  border-color: var(--primary-600);
+}
+
+.p-button.p-button-primary:hover {
+  background-color: var(--primary-700);
+  border-color: var(--primary-700);
+}
+
+.p-button.p-button-secondary {
+  background-color: var(--secondary-600);
+  border-color: var(--secondary-600);
+}
+
+.p-inputtext {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--border-primary);
+}
+
+.p-inputtext:focus {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 1px var(--primary-200);
+}
+
+.dark .p-inputtext:focus {
+  box-shadow: 0 0 0 1px var(--primary-400);
+}
